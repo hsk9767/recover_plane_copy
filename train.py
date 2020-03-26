@@ -19,6 +19,7 @@ try 0.08 0.092 0.11 0.13, or a line search in [0.08, 0.13] may be help
 '''
 
 from __future__ import division
+from absl import logging
 import tensorflow as tf
 import pprint
 import random
@@ -34,6 +35,7 @@ def del_all_flags(FLAGS):
         FLAGS.__delattr__(keys)
 
 del_all_flags(tf.flags.FLAGS)
+logging.set_verbosity(logging.INFO)
 
 flags = tf.app.flags
 flags.DEFINE_string("dataset_dir", "", "Dataset directory")
