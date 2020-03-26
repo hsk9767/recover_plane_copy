@@ -30,12 +30,13 @@ import os
 
 def del_all_flags(FLAGS):
     flags_dict = FLAGS._flags()    
-    keys_list = [keys for keys in flags_dict]    
-    for keys in keys_list:
-        FLAGS.__delattr__(keys)
+#     keys_list = [keys for keys in flags_dict]    
+#     for keys in keys_list:
+#         FLAGS.__delattr__(keys)
+    FLAGS.__delattr__(log_dir)
 
 del_all_flags(tf.flags.FLAGS)
-logging.set_verbosity(logging.INFO)
+# logging.set_verbosity(logging.INFO)
 
 flags = tf.app.flags
 flags.DEFINE_string("dataset_dir", "", "Dataset directory")
