@@ -27,6 +27,14 @@ from RecoverPlane import RecoverPlane
 
 import os
 
+def del_all_flags(FLAGS):
+    flags_dict = FLAGS._flags()    
+    keys_list = [keys for keys in flags_dict]    
+    for keys in keys_list:
+        FLAGS.__delattr__(keys)
+
+del_all_flags(tf.flags.FLAGS)
+
 flags = tf.app.flags
 flags.DEFINE_string("dataset_dir", "", "Dataset directory")
 flags.DEFINE_string("log_dir", "", "Dataset directory")
