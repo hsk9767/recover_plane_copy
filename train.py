@@ -54,6 +54,10 @@ flags.DEFINE_integer("save_latest_freq", 5000, \
     "Save the latest model every save_latest_freq iterations (overwrites the previous latest model)")
 flags.DEFINE_boolean("continue_train", False, "Continue training from previous checkpoint")
 flags.DEFINE_boolean("debug", True, "debug mode?")
+
+flags.DEFINE_boolean('verbose', False, 'Produce verbose output.')
+
+
 flags.DEFINE_string("gpu", "0", "GPU ID")
 
 
