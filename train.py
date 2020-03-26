@@ -34,6 +34,7 @@ def del_all_flags(FLAGS):
         FLAGS.__delattr__(keys)
 
 del_all_flags(tf.flags.FLAGS)
+tf.logging.set_verbosity(tf.logging.INFO)
 
 flags = tf.app.flags
 flags.DEFINE_string("dataset_dir", "", "Dataset directory")
